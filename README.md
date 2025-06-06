@@ -12,15 +12,17 @@ It uses the R package [**rodeo**](https://cran.r-project.org/package=rodeo) to g
 
 Install a installation of [**R**](https:\\cran.r-project.org), e.g. version 4.4.x or newer and the development toolchain (compilers), e.g. [RTools](https://cran.r-project.org/bin/windows/Rtools/) on Windows or the r-base-dev package on Linux/Ubuntu (`sudo apt-get install r-base-dev`).
 
-2. Install the package
+2. Install the package:
 
 ```
 install.packages("remotes")
 remotes::install_github("tpetzoldt/salmoRodeo")
 ```
 
-3. Read the vignette [Get started](https://tpetzoldt.github.io/salmoRodeo/articles/salmoRodeo.html)
+3. Read the [Get started](https://tpetzoldt.github.io/salmoRodeo/articles/salmoRodeo.html)-vignette.
 
-4. Give feedback to the package authors.
+4. Perform some simulations.
+
+5. Give feedback to the package authors.
 
 Status: work in progress (alpha)
