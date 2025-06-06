@@ -1,9 +1,13 @@
 # salmoRodeo
-Re-Implementation of the Classical SALMO Model in Gujer-Petersen Matrix Notation
+
+## Re-Implementation of the Classical SALMO Model
+
+Status: work in progress (alpha)
+
+The current implementation employs the [Gujer-Petersen Matrix](https://en.wikipedia.org/wiki/Petersen_matrix) notation and the **R** package [**rodeo**](https://cran.r-project.org/package=rodeo) to generate fast Fortran code, that is then solved as initial value problem using the [**deSolve**](https://CRAN.R-project.org/package=deSolve) package in **R**.
+
 
 The current version implements a single layer, which could be useful for shallow lakes. It could also serve as a starting point for a 1D version coupled to a hydrophysical driver or for further work on the biogeochemical process descriptions.
-
-It uses the R package [**rodeo**](https://cran.r-project.org/package=rodeo) to generate fast Fortran code, that can then be solved as initial value problem using the [**deSolve**](https://CRAN.R-project.org/package=deSolve) package in R.
 
 
 ## Installation and Getting started
@@ -25,4 +29,3 @@ remotes::install_github("tpetzoldt/salmoRodeo")
 
 5. Give feedback to the package authors.
 
-Status: work in progress (alpha)
