@@ -1,3 +1,7 @@
 ^salmoRodeo\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
