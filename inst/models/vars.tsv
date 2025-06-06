@@ -1,0 +1,9 @@
+name	unit	description	default	Quitzdorf
+n	g/m3	nitrogen concentration	1.5	1.5
+p	mg/m3	phosphate concentration	8	8
+x1	g/m3	phytoplankton 1 concentration	0.1	0.1
+x2	g/m3	phytoplankton 2 concentration	0	0
+x3	g/m3	phytoplankton 3 concentration	1	1
+z	g/m3	zooplankton concentration	1	1
+d	g/m3	detritus concentration	5	5
+xsum	g/m3	combined phytoplankton concentration	1.1	1.1

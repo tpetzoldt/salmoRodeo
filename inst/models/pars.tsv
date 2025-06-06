@@ -1,0 +1,127 @@
+name	unit	description	default	note
+ANSFMIN	(gN)/(m²*d)	Minimal value of inorganic nitrogen release from sediment (at 0 °C)	0	TYPICAL LAKE SPECIFIC PARAMETERS
+aver	-	Area of layer at its bottom / at its top (<= 1)	0	for 1 layer it is 0 (no layer below) / area at top = 0
+EPSMIN	(m²)/(m³)	Light extinction coefficient for water	1.5	
+MOMIN	(1)/(d)	Rate of zoo mortality at 0 °C (at zoo biomass much higher than half-saturation)	0.015	"this is value without biomanipulation	 other common are 0.005 (with biomanipulation) and 0.045 (many small fish)"
+MOT	(°C)/(d)	Slope for zoo mortality depending on temperature	0.006	"this is value without biomanipulation	 other common are 0.002 (with biomanipulation) and 0.018 (many small fish)"
+NDSEND	-	End day of denitrification from sediment	270	
+NDSSTART	-	Start day of denitrification from sediment	60	
+npsfmode	-	"Shallow lake parameter (if 1	 p release only dependent on n)"	1	
+nx	-	Number of phytoplankton groups	3	
+APSFMAX	(mgP)/(m²*d)	Maximum value of phosphorus release from sediment (at O2 < linden)	5.5	GENERAL PARAMETERS
+APSFMIN	(mgP)/(m²*d)	Minimum value of phosphorus release from sediment (at O2 saturation)	0.77	
+APSFT	-	Temperature correction factor for p release from sediment	1.03	
+AZMAX	-	Maximum assimilation coefficient of zoo (at minimum ingestion rate)	0.8	
+AZMIN	-	Minimum assimilation coefficient of zoo (at maximum ingestion rate)	0.4	
+DTA	-	Parameter for zoo egg development time depending on temperature	3.9	
+DTB	-	Parameter for zoo egg development time depending on temperature	0.15	
+DTC	-	Parameter for zoo egg development time depending on temperature	0.26	
+DTMIN	d	Value for zoo egg development time below which the time becomes constant	5	
+EPSD	(m²)/(g)	Light extinction coefficient for detritus	0.023	
+GMAX	(g)/(g*d)	Maximum value of specific ingestion rate of zoo	1.3	
+GMIN	(g)/(g*d)	Minimum value of specific ingestion rate of zoo (near 0 °C)	0.26	
+KANSF	(g)/(m²*d*°C)	Slope for release of organic nitrogen from sediment	0	
+KAPSF	(gO2)/(m³)	Half-saturation of O2 for phosphorus release from sediment	0.38	
+KDEN	(g)/(cm³)	Coefficient for denitrification dependence on organic matter	0.045	
+KMINER	(1)/(d)	Coefficient for O2 consumption by mineralization of sinking phytoplankton	0.04	
+KMO	(g)/(m³)	Half-saturation for zoo mortality on zoo biomass	0.35	
+KNDS	(g)/(cm³)	Half-saturation of denitrification on nitrogen	0.005	
+KNDST	-	Parameter for temperature dependence of denitrification	1.03	
+KO		Half-saturation of O2 limitation	0.5	
+KSEZA	(gO2)/(m³)	Half-saturation of O2 consumption by sediment on O2	2.5	
+KXG	(g)/(m³)	Half-saturation of ingestion rate of zoo on food	5	
+KXMIN	(g)/(m³)	"Minimum of half-saturation (kx	 kxn) of inverse relationship of photosynthesis on phytoplankton biomass"	2.5	
+KZMIN	(g)/(m³)	Minimum of half-saturation (kz) of inverse relationship of ingestion rate on zoo biomass	4	
+LGH	-	Parameter of the dependence of half-saturation (kzi) of ingestion rate on phytoplankton biomass at high phytoplankton biomass	0.4	
+LGL	-	Parameter of the dependence of half-saturation (kzi) of ingestion rate on phytoplankton biomass at low phytoplankton biomass	5.76	
+LINDEN	(gO2)/(m³)	O2 threshold below which denitrification occurs	0.3	
+LXH	-	Parameter for half-saturation of phytosynthesis on p concentration at high p concentration	0.1	
+LXHN	-	Parameter for half-saturation of phytosynthesis on n concentration at high n concentration	209.56	
+LXL	-	Parameter for half-saturation of phytosynthesis on p concentration at low p concentration	2.78	
+LXLN	-	Parameter for half-saturation of phytosynthesis on n concentration at low p concentration	19.04	
+MGH	-	Parameter for half-saturation of ingestion rate on phytoplankton biomass at high phytoplankton biomass	1.5	
+MGL	-	Parameter for half-saturation of ingestion rate on phytoplankton biomass at low phytoplankton biomass	0.41	
+MXH	-	Parameter for half-saturation of phytosynthesis on nutrient concentration at high nutrient concentration	1.55	
+MXL	-	Parameter for half-saturation of phytosynthesis on nutrient concentration at low nutrient concentration	0.39	
+NDSMAX	(gN)/(m²*d)	Maximum rate of denitrification	0.085	
+OPTNP	-	Optimum n/p mass ratio	0.0072	
+PF	-	Preference factor for ingestion of detritus by zoo	1	
+R	-	Parameter of ingestion rate of zoo on water temperature	2	
+RAT	-	Ratio of soluble to total phosphorus in zooplankton faeces 	0.7	
+RATF	-	Ratio of soluble to total phosphorus in fish excrement and during remineralization of dead zooplankton	0.7	
+RATN	-	Ratio of soluble to total nitrogen in zooplankton faeces	0.7	
+RATNF	-	Ratio of soluble to total nitrogen in fish excrements and during remineralization of dead zooplankton	0.7	
+RL	-	Factor of light reflection at the water surface	0.9	
+RLW	-	Factor of light reflection at the water surface during ice cover	0.2	
+RXMF	-	Factor of phtosynthesis rate consumed by additional respiration	0.3	
+RZMIN	(1)/(d)	Respiration rate of zoo at optimum temperature for feeding but without food supply	0.08	
+RZOPT	(1)/(d)	Respiration rate of zoo at optimum temperature for feeding and maximum ingestion rate	0.22	
+RZTMIN	(1)/(d)	Respiration rate of zoo near 0 °C and optimal food supply	0.05	
+SEZMAX	(gO2)/(m³*d)	Maximum oxygen consumption by the sediment	0.4	
+SF	-	Sediment focussing factor	1	
+TOPTZ	°C	Optimum temperature for feeding activity of zoo	20	
+UXZD	-	Factor of the physiological utilisation of detritus by zooplankton	0.75	
+VD	(m)/(d)	Net sinking velocity of detritus	0.2	
+WPKX	(mg)/(m³)	Point of inflection of half-saturation of photosynthesis on phytoplankton biomass	12.5	
+WPKZ	(g)/(m³)	Point of inflection of half-saturation of ingestion rate on zoo biomass	8.6	
+YD	(gWM)/(mgP)	Phosphorus related yield coefficient of detritus	2	
+YND	(gWM)/(mgN)	Nitrogen related yield coefficient of detritus	285	
+YNX	(g)/(mgN)	Nitrogen related yield coefficient of phytoplankton	57	
+YOX	(g)/(g)	O2 consumed/released per gram biomass oxidized/produced	3.75	
+YZN	(gWM)/(mgN)	Nitrogen related yield coefficient of zooplankton	110	
+YZP	(gWM)/(mgP)	Phosphorus related yield coefficient of phytoplankton	0.8	
+EPSX1	(m²)/(g)	Light extinction coefficient for phyto 1	0.0368	Oscillatoria → groups need to be ordered from hardest to easiest to eat
+EPSX2	(m²)/(g)	Light extinction coefficient for phyto 2	0.046	Asterionella
+EPSX3	(m²)/(g)	Light extinction coefficient for phyto 3	0.046	Scenedesmus/Cyclotella
+KI1	(J)/(cm²*d1)	Half-saturation of photosynthesis for phyto 1 on light	28	
+KI2	(J)/(cm²*d1)	Half-saturation of photosynthesis for phyto 2 on light	29	
+KI3	(J)/(cm²*d1)	Half-saturation of photosynthesis for phyto 3 on light	29	
+KN1	(gN)/(m³)	Half-saturation of photosynthesis for phyto 1 on n at minimum phytoplankton biomass	0.0123	
+KN2	(gN)/(m³)	Half-saturation of photosynthesis for phyto 2 on n at minimum phytoplankton biomass	0.0123	
+KN3	(gN)/(m³)	Half-saturation of photosynthesis for phyto 3 on n at minimum phytoplankton biomass	0.0095	
+KP1	(gN)/(m³)	Half-saturation of photosynthesis of phyto 1 on p at minimum phytoplankton biomass	1.7	
+KP2	(gN)/(m³)	Half-saturation of photosynthesis of phyto 2 on p at minimum phytoplankton biomass	1.7	
+KP3	(gN)/(m³)	Half-saturation of photosynthesis of phyto 3 on p at minimum phytoplankton biomass	9.5	
+KPF1	(g)/(m³)	Half-saturation of preference factor of zooplankton for phyto 1 on availability of other phytoplankton	1.1	
+KPF2	(g)/(m³)	Half-saturation of preference factor of zooplankton for phyto 2 on availability of other phytoplankton	4	
+KPF3	(g)/(m³)	Half-saturation of preference factor of zooplankton for phyto 3 on availability of other phytoplankton	0	
+NFIX1	-	N fixation factor for phyto 1	0.24	
+NFIX2	-	N fixation factor for phyto 2	0	
+NFIX3	-	N fixation factor for phyto 3	0	
+PFC1	-	Preference factor for ingestion of phyto 1 by zoo in absence of other phytoplankton	0	
+PFC2	-	Preference factor for ingestion of phyto 2 by zoo in absence of other phytoplankton	0.3	
+PFC3	-	Preference factor for ingestion of phyto 3 by zoo in absence of other phytoplankton	1	only this is effectively used since it is the easiest group to eat
+PFX1	(g)/(m³)	Threshold for biomass of other phytoplanktons above which phyto 1 ingestion rate is decreasing	0.1	
+PFX2	(g)/(m³)	Threshold for biomass of other phytoplanktons above which phyto 3 ingestion rate is decreasing	3	
+PFX3	(g)/(m³)	Threshold for biomass of other phytoplanktons above which phyto 3 ingestion rate is decreasing	0	
+PHOTXMAX1	°C	Photosynthesis rate of phyto 1 at optimum conditions	1.7	
+PHOTXMAX2	°C	Photosynthesis rate of phyto 2 at optimum conditions	1.8	
+PHOTXMAX3	°C	Photosynthesis rate of phyto 3 at optimum conditions	3.5	
+PHOTXMIN1	°C	Photosynthesis rate of phyto 1 at 0 °C but otherwise optimum conditions	0	
+PHOTXMIN2	°C	Photosynthesis rate of phyto 2 at 0 °C but otherwise optimum conditions	0.17	
+PHOTXMIN3	°C	Photosynthesis rate of phyto 3 at 0 °C but otherwise optimum conditions	0.35	
+RXTMIN1	(1)/(d)	Basis respiration of phyto 1 near 0°	0	
+RXTMIN2	(1)/(d)	Basis respiration of phyto 2 near 0°	0.02	
+RXTMIN3	(1)/(d)	Basis respiration of phyto 3 near 0°	0.02	
+RXTOPT1	(1)/(d)	Basis respiration of phyto 1 near optimum	0.057	
+RXTOPT2	(1)/(d)	Basis respiration of phyto 2 near optimum	0.06	
+RXTOPT3	(1)/(d)	Basis respiration of phyto 3 near optimum	0.06	
+TOPTX1	°C	Optimum photosynthesis temperature for phyto 1	25	
+TOPTX2	°C	Optimum photosynthesis temperature for phyto 2	20	
+TOPTX3	°C	Optimum photosynthesis temperature for phyto 3	25	
+UXZ1	-	Factor of the physiological utilisation of phyto 1 by zooplankton	1	
+UXZ2	-	Factor of the physiological utilisation of phyto 2 by zooplankton	1	
+UXZ3	-	Factor of the physiological utilisation of phyto 3 by zooplankton	1	
+VS1	(m)/(d)	Net sinking velocity of phyto 1	0.05	
+VS2	(m)/(d)	Net sinking velocity of phyto 2	0.1	
+VS3	(m)/(d)	Net sinking velocity of phyto 3	0.1	
+YX1	(gWM)/(mgP)	Phosphorus content of phyto 1	1	
+YX2	(gWM)/(mgP)	Phosphorus content of phyto 2	0.8	
+YX3	(gWM)/(mgP)	Phosphorus content of phyto 3	0.41	
+nin_factor	-		1	INPUT FACTORS
+pin_factor	-		1	
+iin_factor	-		1	
+din_factor	-		1	
+temp_rise	-		0	
+apsfmax_switch	-		0	
+qperve_factor	-		1	

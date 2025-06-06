@@ -1,0 +1,102 @@
+---
+title: "Basic Usage of salmoRodeo"
+author: "Thomas Petzoldt and Justus Möller "
+date: "`r Sys.Date()`"
+bibliography: salmo.bib
+vignette: >
+  %\VignetteIndexEntry{Basic Usage of salmoRodeo}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r opts, echo = FALSE, message = FALSE}
+## preload it to suppress messages
+library("salmoRodeo")
+library("deSolve")
+knitr::opts_chunk$set(echo = TRUE, eval=FALSE, comment="")
+```
+
+
+## Background
+
+SALMO [Simulation by an Analytical Lake Model, @Benndorf1979;@Benndorf1982;@Recknagel1989] and further developed by several authors, e.g. @Petzoldt2005, @Rolinski2005 and @Sachse2014 is a dynamic ecological model that simulates essential pelagic food web compartments of lakes and reservoirs. Its state variables are soluble reactive phosphorus, inorganic nitrogen, two or three functional phytoplankton groups, zooplankton, oxygen and detritus. Other important, e.g. predation by fish or sediment-water interactions, are  included by empirical equations.
+
+Over the years, several "monolithic" implementations and forks have appeared, that have in common to be difficult to maintain. The version provided here was implemented by Justus Möller as part of a study project. It aims to make modificatins and extensions easier by emplying a tabular description of processes and stoichiometry. The code generator package [**rodeo**, @Kneis2017; @Kneis2024] to generate executable code.
+
+
+This vignette demonstrates the basic setup, execution, and plotting functionalities of the `salmoRodeo` package. It showcases how to initialize a model, set parameters and initial conditions, run simulations, and visualize results.
+
+## Setup and Model Compilation
+
+We begin by loading the `salmoRodeo` package and setting up the model. By default, `model_setup()` uses input files from the package's internal `models` directory.
+
+```{r setup}
+library("salmoRodeo")
+library("deSolve")
+
+# Setup and compile model using default input files
+model <- model_setup()
+```
+
+
+You could also specify a local data file if your inputs are not bundled with the package:
+
+```{r setup2}
+#model <- model_setup(datafile="inputs.tsv")
+```
+
+## Setting Time, Parameters, and Initial Conditions
+
+Next, we define the simulation time steps (e.g. 2 years), initial state variable values, and any custom parameter settings. Note that due to its implementation as a state variable, xsum must be the sum of x1 + x2 + x3.
+
+
+```{r simulation_settings}
+times <- seq(1, 730, 1)
+
+# Set initial values for state variables
+model <- set_initval(model, c(p=50, n=3, x1=0.1, x2=0.1, x3=0.1, z=0.1, d=1, xsum=0.3))
+
+# Apply default parameter values (or provide specific changes if needed)
+model <- set_pars(model)
+```
+
+
+## Optional: Cloning and Altering Parameters for Comparison
+
+The rodeo package allows you to clone model objects, which is useful for comparing different parameter scenarios without re-compiling the model from scratch. We'll create a clone and modify a few parameters. Remember that `set_pars()` is cumulative if called multiple times on the same objec.
+
+
+```{r cloning}
+model2 <- model$clone()
+model2 <- set_pars(model2, c(npsfmode = 0, MOMIN = 0.03, MOT=0.012))
+
+# Verify the altered parameters
+model2$getPars()[c("MOMIN", "MOT")]
+```
+
+## Running Simulations
+
+Now, we run the dynamic simulations for both the original and the cloned models using the specified time steps and solver settings.
+
+```{r simulation}
+out <- model$dynamics(times = times, diagnostics = TRUE, atol = 1e-8,
+                      rtol = 1e-2, method = "adams", fortran = TRUE)
+
+out2 <- model2$dynamics(times = times, diagnostics = TRUE, atol = 1e-8,
+                        rtol = 1e-2, method = "adams", fortran = TRUE)
+```
+
+## Visualizing Results and Diagnostics
+
+Finally, we plot the output from both simulations to compare the state variable
+trajectories and run diagnostics to check the model's performance.
+
+```{r output}
+plot(out, out2, which=c("p", "n", "x1", "x2", "x3", "z", "d", "xsum", "pin"))
+```
+
+```{r diagnostics}
+deSolve::diagnostics(out)
+```
+
+## References

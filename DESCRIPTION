@@ -1,0 +1,20 @@
+Package: salmoRodeo
+Title: A 1-layer ecological lake model in Petersen-Gujer matrix notation
+Version: 0.2
+Authors@R: 
+  c(person("Justus", "Möller", role = c("aut")),
+  person("Thomas","Petzoldt", role = c("aut", "cre"),
+          email = "thomas.petzoldt@tu-dresden.de",
+	 	  comment = c(ORCID = "0000-0002-4951-6468"))
+  )
+Description: The package implements a 1-layer version of the ecological lake 
+  model SALMO using a tabular Petersen-Gujer matrix description. It simulates 
+  main components of the pelagic foodweb in a shallow, non-stratified lake.
+Depends: R (>= 4.1.0), rodeo
+Imports: stringr, stats
+Suggests: quarto, deSolve, knitr
+License: GPL (>= 2)
+VignetteBuilder: knitr, quarto
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2

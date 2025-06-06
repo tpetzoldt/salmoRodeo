@@ -1,0 +1,40 @@
+name	unit	description	reference	notes
+f_nkons_x_i		N consumption by phyto I	1.2 (inside sum)	
+f_nsf	gN/m3*d	release of inorganic nitrogen from the sediment to the water body	1.7	
+f_nden	gN/m3*d	denitrification of N	3.8	
+f_apsf	mgP/m2*d	release rate of anorganic phosphorus from sediment	4.10.	
+f_photx_i	1/d	gross photosynthesis rate phytoplankton 1	9.5	
+f_g_i	g/g*d	specific ingestion rate of phytoplankton group i by zooplankton	9.19.1	
+f_gd	g/g*d	specific ingestion rate of detritus by zooplankton	9.19.2	
+f_gdt	g/g*d	temperature term of the ingestion rate in the dark	9.22	
+f_hwg_i		auxillary value for the calculation of gd	9.21.1	
+f_hwgd		auxillary value for the calculation of gd	9.21.2	
+f_pf_i		preference factor for ingestion of phytoplankton group i by zooplankton	9.25	
+f_g	g/g*d	specific ingestion rate of zooplankton	9.29	
+f_egg		zoo growth reduction due to egg development	12.2	
+f_rz		respiration rate of zoo	12.7	
+f_o		oxygen amount in water (for full mixing)	Before 16.0	
+f_lo	g/m3*d	loading of the water body with oxygen-consuming organic matter	16.6	
+f_xsed_i		sedimentation of phyto I	16.7 (inside sum)	
+lin_dep		lin dep on some value	e.g. 1.7	
+monod		implements monod equation	e.g. 12.12	
+i_vol	m3	lake volume		
+i_depth	m	lake depth		
+i_ased	m2	Sediment area (= lake area for 1 layer)		
+i_qperve	m3/d	dilution rate		
+i_ired	J/cm2*d	photosynthetic active radiation (PAR), 50% of global light		
+i_temp	°C	temperature over the year		
+i_ninflow	g/m3	N conc in inflow		
+i_pinflow	mg/m3	P conc in inflow		
+i_dinflow		D concentration in inflow		
+i_ice		if we have ice cover or not		
+VE		forcing function: lake volume		
+ZMIX		forcing function: layer depth		
+QIN		forcing function: inflow volume		
+IIN		forcing function: photosynthetic active radiation (PAR), 50% of global light		
+TE		forcing function: lake temperature		
+PIN		forcing function: P concentration in inflow		
+NIN		forcing function: N concentration in inflow		
+POMIN		forcing function: D concentration in inflow		
+stagnation		forcing function: if we have ice cover or not		
+f_apsfmax		function to modify maximum P release from sediment		
