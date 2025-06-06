@@ -10,7 +10,7 @@ It uses the R package [**rodeo**](https://cran.r-project.org/package=rodeo) to g
 
 1. Install the prerequisites
 
-Install a installation of [**R**](https:\\cran.r-project.org), e.g. version 4.4.x or newer and the development toolchain (compilers), e.g. [RTools](https://cran.r-project.org/bin/windows/Rtools/) on Windows or the r-base-dev package on Linux/Ubuntu (`sudo apt-get install r-base-dev`).
+Install a recent version of [**R**](https:\\cran.r-project.org), e.g. 4.4.x or newer and the development toolchain (compilers), e.g. [**RTools**](https://cran.r-project.org/bin/windows/Rtools/) on Windows or the **r-base-dev** package on Linux/Ubuntu (`sudo apt-get install r-base-dev`).
 
 2. Install the package:
 
