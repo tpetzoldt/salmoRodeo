@@ -48,9 +48,13 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="salmorodeo">salmoRodeo<a class="anchor" aria-label="anchor" href="#salmorodeo"></a>
 </h1></div>
-<p>Re-Implementation of the Classical SALMO Model in Gujer-Petersen Matrix Notation</p>
+<div class="section level2">
+<h2 id="re-implementation-of-the-classical-salmo-model">Re-Implementation of the Classical SALMO Model<a class="anchor" aria-label="anchor" href="#re-implementation-of-the-classical-salmo-model"></a>
+</h2>
+<p>Status: work in progress (alpha)</p>
+<p>The current implementation employs the <a href="https://en.wikipedia.org/wiki/Petersen_matrix" class="external-link">Gujer-Petersen Matrix</a> notation and the <strong>R</strong> package <a href="https://cran.r-project.org/package=rodeo" class="external-link"><strong>rodeo</strong></a> to generate fast Fortran code, that is then solved as initial value problem using the <a href="https://CRAN.R-project.org/package=deSolve" class="external-link"><strong>deSolve</strong></a> package in <strong>R</strong>.</p>
 <p>The current version implements a single layer, which could be useful for shallow lakes. It could also serve as a starting point for a 1D version coupled to a hydrophysical driver or for further work on the biogeochemical process descriptions.</p>
-<p>It uses the R package <a href="https://cran.r-project.org/package=rodeo" class="external-link"><strong>rodeo</strong></a> to generate fast Fortran code, that can then be solved as initial value problem using the <a href="https://CRAN.R-project.org/package=deSolve" class="external-link"><strong>deSolve</strong></a> package in R.</p>
+</div>
 <div class="section level2">
 <h2 id="installation-and-getting-started">Installation and Getting started<a class="anchor" aria-label="anchor" href="#installation-and-getting-started"></a>
 </h2>
@@ -68,7 +72,6 @@
 <li><p>Perform some simulations.</p></li>
 <li><p>Give feedback to the package authors.</p></li>
 </ol>
-<p>Status: work in progress (alpha)</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="license">
