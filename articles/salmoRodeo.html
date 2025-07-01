@@ -50,7 +50,7 @@
       <h1>Basic Usage of salmoRodeo</h1>
 
       <p class="author">Thomas Petzoldt and Justus Möller</p>
-      <p class="date">2025-06-06</p>
+      <p class="date">2025-07-01</p>
 
 
       <div class="d-none name"><code></code></div>
@@ -90,7 +90,7 @@
 <code class="sourceCode R"><span><span class="va">times</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">730</span>, <span class="fl">1</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Set initial values for state variables</span></span>
-<span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/set_initval.html">set_initval</a></span><span class="op">(</span><span class="va">model</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>p<span class="op">=</span><span class="fl">50</span>, n<span class="op">=</span><span class="fl">3</span>, x1<span class="op">=</span><span class="fl">0.1</span>, x2<span class="op">=</span><span class="fl">0.1</span>, x3<span class="op">=</span><span class="fl">0.1</span>, z<span class="op">=</span><span class="fl">0.1</span>, d<span class="op">=</span><span class="fl">1</span>, xsum<span class="op">=</span><span class="fl">0.3</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/set_initval.html">set_initval</a></span><span class="op">(</span><span class="va">model</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">3</span>, p<span class="op">=</span><span class="fl">50</span>, x1<span class="op">=</span><span class="fl">0.1</span>, x2<span class="op">=</span><span class="fl">0.1</span>, x3<span class="op">=</span><span class="fl">0.1</span>, z<span class="op">=</span><span class="fl">0.1</span>, d<span class="op">=</span><span class="fl">1</span>, xsum<span class="op">=</span><span class="fl">0.3</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Apply default parameter values (or provide specific changes if needed)</span></span>
 <span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/set_pars.html">set_pars</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span></code></pre></div>
@@ -122,7 +122,7 @@
 <p>Finally, we plot the output from both simulations to compare the state variable trajectories and run diagnostics to check the model’s performance.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">out</span>, <span class="va">out2</span>, which<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"p"</span>, <span class="st">"n"</span>, <span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"x3"</span>, <span class="st">"z"</span>, <span class="st">"d"</span>, <span class="st">"xsum"</span>, <span class="st">"pin"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">out</span>, <span class="va">out2</span>, which<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"n"</span>, <span class="st">"p"</span>, <span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"x3"</span>, <span class="st">"z"</span>, <span class="st">"d"</span>, <span class="st">"xsum"</span>, <span class="st">"pin"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="downlit sourceCode r">
