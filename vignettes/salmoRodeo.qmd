@@ -54,7 +54,7 @@ Next, we define the simulation time steps (e.g. 2 years), initial state variable
 times <- seq(1, 730, 1)
 
 # Set initial values for state variables
-model <- set_initval(model, c(p=50, n=3, x1=0.1, x2=0.1, x3=0.1, z=0.1, d=1, xsum=0.3))
+model <- set_initval(model, c(n=3, p=50, x1=0.1, x2=0.1, x3=0.1, z=0.1, d=1, xsum=0.3))
 
 # Apply default parameter values (or provide specific changes if needed)
 model <- set_pars(model)
@@ -92,7 +92,7 @@ Finally, we plot the output from both simulations to compare the state variable
 trajectories and run diagnostics to check the model's performance.
 
 ```{r output}
-plot(out, out2, which=c("p", "n", "x1", "x2", "x3", "z", "d", "xsum", "pin"))
+plot(out, out2, which=c("n", "p", "x1", "x2", "x3", "z", "d", "xsum", "pin"))
 ```
 
 ```{r diagnostics}

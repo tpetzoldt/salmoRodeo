@@ -19,6 +19,10 @@
 #'   with the model (e.g., `functions_extended.f95`).
 #' @param phyto_groups An integer (2 or 3) indicating the number of
 #'   phytoplankton groups, affecting how process and replacement files are read.
+#' @param lib	File path to be used for the generated library (without the
+#'   platform specific extension). Note that any uppercase characters will be
+#'   converted to lowercase. By default, the file is created in R's temporary
+#'   folder under a random name.
 #' @return A `rodeo` model object, compiled and ready for simulation.
 #'
 #' @examples
@@ -79,7 +83,8 @@ model_setup <- function(base_path = NULL,
                         input_columns = c("stagnation", "VE", "ZMIX", "QIN",
                                           "IIN", "TE", "PIN", "NIN", "POMIN"),
                         sources = "functions_extended.f95",
-                        phyto_groups = 3) {
+                        phyto_groups = 3,
+                        lib = NULL) {
 
   if (is.null(base_path)) base_path <- paste0(system.file("models", package="salmoRodeo"), "/")
 
@@ -105,6 +110,6 @@ model_setup <- function(base_path = NULL,
 
   ## run fortran compiler
   # The 'sources' argument adds custom Fortran code to the compilation process
-  model$compile(sources = paste0(base_path, sources), fortran = TRUE)
+  model$compile(sources = paste0(base_path, sources), fortran = TRUE, lib = lib)
   model
 }
