@@ -76,6 +76,15 @@ model2$getPars()[c("MOMIN", "MOT")]
 
 ## Running Simulations
 
+Starting with version 0.9.2, rodeo introduced a new approach for handling input data that improves stability and allows to change external forcings without recompilation or DLL unloading. It has to be called before calling the ode solver or when the input data
+changed:
+
+```{r forcings_init}
+model$forcings_init()
+```
+
+Note however, that the forcing values are identical for all instances of the model until a new data set is provided and `focings_init`is called again.
+
 Now, we run the dynamic simulations for both the original and the cloned models using the specified time steps and solver settings.
 
 ```{r simulation}

@@ -23,15 +23,20 @@ model2 <- set_pars(model2, c(npsfmode = 0, MOMIN = 0.03, MOT=0.012))
 ## test
 model2$getPars()[c("MOMIN", "MOT")]
 
+model$forcings_init()
+#model2$forcings_init() # <-- not needed, both versions use the same inputs
 
 ## run model
-out <- model$dynamics(times = times, diagnostics = TRUE, atol = 1e-8,
-                      rtol = 1e-2, method = "adams", fortran = TRUE)
+
+for (i in 1:5) {
+  cat(i, "\t")
+  out <- model$dynamics(times = times, diagnostics = TRUE, atol = 1e-8,
+                        rtol = 1e-2, method = "adams", fortran = TRUE)
 
 
-out2 <- model2$dynamics(times = times, diagnostics = TRUE, atol = 1e-8,
-                      rtol = 1e-2, method = "adams", fortran = TRUE)
-
+  out2 <- model2$dynamics(times = times, diagnostics = TRUE, atol = 1e-8,
+                          rtol = 1e-2, method = "adams", fortran = TRUE)
+}
 
 plot(out, out2, which=c("n", "p", "x1", "x2", "x3", "z", "d", "xsum", "pin"))
 

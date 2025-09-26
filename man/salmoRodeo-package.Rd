@@ -15,6 +15,13 @@ Usage of the package requires installed build tools,
 Gnu C/C++ and Gnu Fortran on Linux or
 \href{https://cran.r-project.org/bin/windows/Rtools/}{RTools} on Windows.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://tpetzoldt.github.io/salmoRodeo/}
+}
+
+}
 \author{
 Justus Möller
 

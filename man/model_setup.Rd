@@ -16,7 +16,8 @@ model_setup(
   input_columns = c("stagnation", "VE", "ZMIX", "QIN", "IIN", "TE", "PIN", "NIN",
     "POMIN"),
   sources = "functions_extended.f95",
-  phyto_groups = 3
+  phyto_groups = 3,
+  lib = NULL
 )
 }
 \arguments{
@@ -45,6 +46,11 @@ with the model (e.g., \code{functions_extended.f95}).}
 
 \item{phyto_groups}{An integer (2 or 3) indicating the number of
 phytoplankton groups, affecting how process and replacement files are read.}
+
+\item{lib}{File path to be used for the generated library (without the
+platform specific extension). Note that any uppercase characters will be
+converted to lowercase. By default, the file is created in R's temporary
+folder under a random name.}
 }
 \value{
 A \code{rodeo} model object, compiled and ready for simulation.
