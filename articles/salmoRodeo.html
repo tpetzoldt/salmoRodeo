@@ -50,7 +50,7 @@
       <h1>Basic Usage of salmoRodeo</h1>
 
       <p class="author">Thomas Petzoldt and Justus Möller</p>
-      <p class="date">2025-07-01</p>
+      <p class="date">2025-09-26</p>
 
 
       <div class="d-none name"><code></code></div>
@@ -108,9 +108,15 @@
 </div>
 </section><section class="level2"><h2 id="running-simulations">Running Simulations<a class="anchor" aria-label="anchor" href="#running-simulations"></a>
 </h2>
-<p>Now, we run the dynamic simulations for both the original and the cloned models using the specified time steps and solver settings.</p>
+<p>Starting with version 0.9.2, rodeo introduced a new approach for handling input data that improves stability and allows to change external forcings without recompilation or DLL unloading. It has to be called before calling the ode solver or when the input data changed:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">model</span><span class="op">$</span><span class="fu">forcings_init</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</div>
+<p>Note however, that the forcing values are identical for all instances of the model until a new data set is provided and <code>focings_init</code>is called again.</p>
+<p>Now, we run the dynamic simulations for both the original and the cloned models using the specified time steps and solver settings.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">out</span> <span class="op">&lt;-</span> <span class="va">model</span><span class="op">$</span><span class="fu">dynamics</span><span class="op">(</span>times <span class="op">=</span> <span class="va">times</span>, diagnostics <span class="op">=</span> <span class="cn">TRUE</span>, atol <span class="op">=</span> <span class="fl">1e-8</span>,</span>
 <span>                      rtol <span class="op">=</span> <span class="fl">1e-2</span>, method <span class="op">=</span> <span class="st">"adams"</span>, fortran <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
@@ -121,11 +127,11 @@
 </h2>
 <p>Finally, we plot the output from both simulations to compare the state variable trajectories and run diagnostics to check the model’s performance.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">out</span>, <span class="va">out2</span>, which<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"n"</span>, <span class="st">"p"</span>, <span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"x3"</span>, <span class="st">"z"</span>, <span class="st">"d"</span>, <span class="st">"xsum"</span>, <span class="st">"pin"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode cell-code" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">deSolve</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/deSolve/man/diagnostics.html" class="external-link">diagnostics</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span></code></pre></div>
 </div>
 </section><section class="level2 unnumbered"><h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>

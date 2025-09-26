@@ -59,7 +59,8 @@ generating forcing functions, and finally compiling the model.</p>
 <span>  input_columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"stagnation"</span>, <span class="st">"VE"</span>, <span class="st">"ZMIX"</span>, <span class="st">"QIN"</span>, <span class="st">"IIN"</span>, <span class="st">"TE"</span>, <span class="st">"PIN"</span>, <span class="st">"NIN"</span>,</span>
 <span>    <span class="st">"POMIN"</span><span class="op">)</span>,</span>
 <span>  sources <span class="op">=</span> <span class="st">"functions_extended.f95"</span>,</span>
-<span>  phyto_groups <span class="op">=</span> <span class="fl">3</span></span>
+<span>  phyto_groups <span class="op">=</span> <span class="fl">3</span>,</span>
+<span>  lib <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -113,6 +114,13 @@ with the model (e.g., <code>functions_extended.f95</code>).</p></dd>
 <dt id="arg-phyto-groups">phyto_groups<a class="anchor" aria-label="anchor" href="#arg-phyto-groups"></a></dt>
 <dd><p>An integer (2 or 3) indicating the number of
 phytoplankton groups, affecting how process and replacement files are read.</p></dd>
+
+
+<dt id="arg-lib">lib<a class="anchor" aria-label="anchor" href="#arg-lib"></a></dt>
+<dd><p>File path to be used for the generated library (without the
+platform specific extension). Note that any uppercase characters will be
+converted to lowercase. By default, the file is created in R's temporary
+folder under a random name.</p></dd>
 
 </dl></div>
     <div class="section level2">
